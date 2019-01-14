@@ -1,0 +1,118 @@
+// @import 'include-media';
+// @import '../../node_modules/include-media/dist/_include-media.scss';
+
+
+// $breakpoints: (phone: 320px, tablet: 768px, desktop: 1024px);
+// $breakpoints: (phone: 640px, 
+// tablet: 768px, 
+// desktop: 1024px) !default;
+
+
+
+$small: "only screen and (max-width: 539px)";
+$medium: "only screen and (min-width: 540px) and (max-width: 719px)";
+$large: "only screen and (min-width: 720px) and (max-width: 899px)";
+$xlarge: "only screen and (min-width: 900px) and (max-width: 1199px)";
+$xxlarge: "only screen and (min-width: 1200px)";
+
+
+.wrapper {
+  display: grid;
+  // grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(1fr, 1fr, 1fr);
+  grid-template-row: repeat(1fr, 1fr, 1fr);
+  grid-gap: 10px;
+  // grid-auto-rows: minmax(100px, auto);
+
+  margin: 0 auto;
+
+  @media #{$small} {
+    width: 100%;
+    grid-template-columns: 100%;
+    grid-gap: 0;
+  }
+  @media #{$medium} {
+    width: 540px;
+  }
+  @media #{$large} {
+    width: 720px;
+  }
+  @media #{$xlarge} {
+    width: 900px;
+  }
+  @media #{$xxlarge} {
+    width: 1200px;
+  }
+
+  // @include media("phone", "<=tablet") {
+  //   // @include media("phone") {
+  //   grid-template-columns: auto;
+  // }
+  // @include media("tablet") {
+  //   grid-template-columns: auto auto;
+  // }
+  // @include media("desktop") {
+  //   grid-template-columns: auto;
+  // }
+  // @include media(">phone", "<tablet") {
+  // }
+
+  // @include media(">tablet", "<950px") {
+  // }
+}
+
+.gridded {
+  border: 1px solid red;
+}
+.fa {
+  color: #444;
+  // font-size: 4em;
+  font-size: 50px;
+}
+
+.one {
+  grid-column: 1;
+  grid-row: 1;
+}
+.two { 
+  grid-column: 2/4;
+  grid-row:  1;
+}
+
+.three {
+  grid-column: 1/3;
+  grid-row: 2 ;
+}
+.four {
+  grid-column: 3;
+  grid-row: 2;
+  text-align: right;
+}
+
+.five {
+  grid-column: 1;
+  grid-row: 3;
+}
+.six {
+  grid-column: 2/4;
+  grid-row: 3;
+}
+
+.seven {
+  grid-column: 1/3;
+  grid-row: 4 ;
+}
+.eight {
+  grid-column:  3;
+  grid-row: 4 ;
+  text-align: right;
+}
+
+.nine {
+  grid-column: 1;
+  grid-row: 5;
+}
+.ten {
+  grid-column: 2/4;
+  grid-row: 5;
+}
